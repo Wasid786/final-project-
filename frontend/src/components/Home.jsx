@@ -7,6 +7,7 @@ import { FaHeart } from "react-icons/fa";
 import './Home.css';
 import API_URL from "../constants";
 import Footer from "./Footer.jsx"
+import SpecialProgram from "./SpecialProgram.jsx";
 
 
 function Home() {
@@ -107,6 +108,7 @@ function Home() {
          <div>
             <Header search={search} handlesearch={handlesearch} handleClick={handleClick} />
             <Categories handleCategory={handleCategory} />
+            <SpecialProgram/>
             {issearch && cproducts &&
                 <h5> SEARCH RESULTS
                     <button className="clear-btn" onClick={() => setissearch(false)}> CLEAR </button>

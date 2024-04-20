@@ -99,7 +99,7 @@ function Footer() {
         <ul className="ft-social-links">
           <li>
             <a
-              href="https://www.linkedin.com/feed/"
+              href="https://www.linkedin.com/in/wasid-ansari-57ab75229/"
               title="LinkedIn"
               target="_blank"
               rel="noopener noreferrer"
@@ -116,7 +116,7 @@ function Footer() {
 
           <li>
             <a
-              href="https://facebook.com/"
+              href="https://www.facebook.com/profile.php?id=100085622973359"
               title="FaceBook"
               target="_blank"
               rel="noopener noreferrer"
@@ -133,7 +133,7 @@ function Footer() {
 
           <li>
             <a
-              href="https://x.com/Alkaison/"
+              href="https://twitter.com/Wasid_ansari_1"
               title="Twitter"
               target="_blank"
               rel="noopener noreferrer"
