@@ -7,12 +7,13 @@ import API_URL from "../constants";
 function Login() {
     const navigate = useNavigate()
 
-    const [username, setusername] = useState('');
+    const [email, setEmail] = useState('');
+
     const [password, setpassword] = useState('');
 
     const handleApi = () => {
         const url = API_URL + '/login';
-        const data = { username, password };
+        const data = { email, password };
         axios.post(url, data)
             .then((res) => {
                 if (res.data.message) {
@@ -35,9 +36,9 @@ function Login() {
                 <h3> Welocme to Login Page </h3>
                 <br></br>
                 USERNAME
-                <input className="form-control" type="text" value={username}
+                <input className="form-control" type="text" value={email}
                     onChange={(e) => {
-                        setusername(e.target.value)
+                        setEmail(e.target.value)
                     }} />
                 <br></br>
                 PASSWORD
