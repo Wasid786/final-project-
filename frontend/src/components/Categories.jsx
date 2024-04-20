@@ -7,7 +7,8 @@ function Categories(props) {
     const navigate = useNavigate();
 
     return (
-        <div className='cat-container'>
+        <div>
+            <div className='cat-container'>
             <div>
                 <span className='pr-3'>All Categories</span>
                 {categories && categories.length > 0 &&
@@ -17,6 +18,9 @@ function Categories(props) {
                         )
                     })}
             </div>
+            
+        </div>
+        
         </div>
     )
 }

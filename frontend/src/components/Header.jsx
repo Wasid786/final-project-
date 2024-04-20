@@ -2,7 +2,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import './Header.css'
 import { FaSearch } from "react-icons/fa";
 import { useState } from 'react';
-
+import { BsPersonCircle } from "react-icons/bs";
+import Logo from "../assets/home.png"
 function Header(props) {
 
     const [loc, setLoc] = useState(null)
@@ -32,8 +33,9 @@ function Header(props) {
     return (
         <div className='header-container d-flex justify-content-between'>
 
-            <div className="header">
-                <Link className='links' to="/">  HOME </Link>
+            <div className="header flex ">
+                    <div className='w-12 mr-5'> <Link className='links' to="/">  <img src={Logo} alt="Home" /> </Link>
+                </div>
                 <select value={loc} onChange={(e) => {
                     localStorage.setItem('userLoc', e.target.value)
                     setLoc(e.target.value)
@@ -65,21 +67,22 @@ function Header(props) {
 
 
 
-                <div
+                <div className='text-white w-10 h-10 flex justify-center  items-center bg-[#002f34] rounded-full   '
                     onClick={() => {
                         setshowOver(!showOver)
                     }}
-                    style={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        background: '#002f34',
-                        width: '40px',
-                        height: '40px',
-                        color: '#fff',
-                        fontSize: '14px',
-                        borderRadius: '50%'
-                    }} >  N </div>
+                    // style={{
+                    //     display: 'flex',
+                    //     justifyContent: 'center',
+                    //     alignItems: 'center',
+                    //     background: '#002f34',
+                    //     width: '40px',
+                    //     height: '40px',
+                    //     color: '#fff',
+                    //     fontSize: '14px',
+                    //     borderRadius: '50%'
+                    // }} 
+                    >  <BsPersonCircle size={35}/> </div>
 
                 {showOver && <div style={{
                     minHeight: '100px',

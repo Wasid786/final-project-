@@ -6,6 +6,7 @@ import Categories from "./Categories";
 import { FaHeart } from "react-icons/fa";
 import './Home.css';
 import API_URL from "../constants";
+import Footer from "./Footer.jsx"
 
 
 function Home() {
@@ -102,7 +103,8 @@ function Home() {
 
 
     return (
-        <div>
+       <div>
+         <div>
             <Header search={search} handlesearch={handlesearch} handleClick={handleClick} />
             <Categories handleCategory={handleCategory} />
             {issearch && cproducts &&
@@ -149,8 +151,11 @@ function Home() {
 
                     })}
             </div>}
+           
 
         </div>
+        <Footer/>
+       </div>
     )
 }
 

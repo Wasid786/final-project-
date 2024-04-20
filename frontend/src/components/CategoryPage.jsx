@@ -8,6 +8,7 @@ import './Home.css';
 import API_URL from "../constants";
 
 
+
 function CategoryPage() {
 
     const navigate = useNavigate()
@@ -146,6 +147,7 @@ function CategoryPage() {
 
                     })}
             </div>}
+            
 
         </div>
     )
