@@ -31,7 +31,7 @@ function Login() {
 
     return (
        <div>
-            <Header />
+           
            <div className="w-2/6 mx-auto h-full">
            <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
                 <h3> Welocme Back </h3>

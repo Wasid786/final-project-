@@ -39,12 +39,16 @@ export default function SpecialProgram() {
     const pauseSlider = () => {
         clearInterval(slideInterval);
     };
-
     const handleOnNextClick = () => {
-        count = (count + 1) % featuredProducts.length;
-        setCurrentIndex(count);
-        slideRef.current.classList.add("fade-anim");
-    };
+      if (slideRef.current) {
+          count = (count + 1) % featuredProducts.length;
+          setCurrentIndex(count);
+          slideRef.current.classList.add("fade-anim");
+      } else {
+          console.error("slideRef.current is null");
+      }
+  };
+  
 
     const handleOnPrevClick = () => {
         const productsLength = featuredProducts.length;

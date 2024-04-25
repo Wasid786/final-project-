@@ -1,4 +1,4 @@
-.header {}
+
 
 .header-container {
     padding: 10px 20px;
@@ -24,15 +24,15 @@
     padding-left: 10px;
     width: 400px;
     height: 44px;
-    border: 2px solid #002f34;
-    border-radius: 4px 0px 0px 4px;
+    border: 2px solid #1b90c6;
+    border-radius: 8px 0px 0px 8px;
 }
 
 .search-btn {
     height: 44px;
-    background-color: #002f34;
+    background-color: #056bc9;
     color: #fff;
-    border-radius: 0px 4px 4px 0px;
+    border-radius: 0px 8px 8px 0px;
     outline: none;
     border: none;
     padding: 0px 15px;

@@ -101,6 +101,8 @@ function Home() {
     const handleProduct = (id) => {
         navigate('/product/' + id)
     }
+           
+
 
 
     return (
@@ -124,11 +126,11 @@ function Home() {
                                 <div onClick={() => handleLike(item._id)} className="icon-con">
                                     <FaHeart className="icons" />
                                 </div>
-                                <img width="300px" height="200px" src={API_URL + '/' + item.pimage} />
+                                <img className="" width="300px" height="200px" src={API_URL + '/' + item.pimage} />
 
                                 <p className="m-2"> {item.pname}  | {item.category} </p>
                                 <h3 className="m-2 text-danger"> {item.price} </h3>
-                                <p className="m-2 text-success"> {item.pdesc} </p>
+                                <p className="m-2 text-success "> {item.pdesc} </p>
                             </div>
                         )
 
@@ -147,7 +149,9 @@ function Home() {
                                 <img width="250px" height="150px" src={API_URL + '/' + item.pimage} />
                                 <h3 className="m-2 price-text"> Rs. {item.price} /- </h3>
                                 <p className="m-2"> {item.pname}  | {item.category} </p>
-                                <p className="m-2 text-success"> {item.pdesc} </p>
+                                <p className="m-2 text-success"> {item.pdesc.split(' ').slice(0, 4).join(' ')}....
+</p>
+
                             </div>
                         )
 

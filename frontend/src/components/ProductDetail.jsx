@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Header from "./Header";
+import './Home.css';
 import API_URL from "../constants";
 
 function ProductDetail() {
@@ -39,36 +40,41 @@ function ProductDetail() {
             })
     }
 
-    return (<>
-        <Header />
-        PRODUCT DETAILS :
-        <div >
-            {product && <div className="d-flex justify-content-between flex-wrap">
-                <div>
-                    <img width="400px" height="200px" src={API_URL + '/' + product.pimage} alt="" />
-                    {product.pimage2 && <img width="400px" height="200px" src={API_URL + '/' + product.pimage2} alt="" />}
-                    <h6> Product Details : </h6>
-                    {product.pdesc}
-                </div>
-                <div>
-                    <h3 className="m-2 price-text"> Rs. {product.price} /- </h3>
-                    <p className="m-2"> {product.pname}  | {product.category} </p>
-                    <p className="m-2 text-success"> {product.pdesc} </p>
-
-                    {product.addedBy &&
-                        <button onClick={() => handleContact(product.addedBy)}>
-                            SHOW CONTACT DETAILS
-                        </button>}
-                    {user && user.username && <h4>{user.username}</h4>}
-                    {user && user.mobile && <h3>{user.mobile}</h3>}
-                    {user && user.email && <h6>{user.email}</h6>}
-
-                </div>
-            </div>}
-        </div>
-    </>
-
-    )
+    return (
+        <>
+            <Header />
+            {/* <div className="text-3xl font-poppins font-bold ">PRODUCT DETAILS:</div> */}
+            <div className="mx-auto mt-10">
+               
+                {product && (
+                    <div className="d-flex justify-evenly">
+                        <div className=" ">
+                            <img width="400px" height="200px" src={API_URL + '/' + product.pimage} alt="" />
+                            {product.pimage2 && <img width="400px" height="200px" src={API_URL + '/' + product.pimage2} alt="" />}
+                        </div>
+                        <div className="w-1/2">
+                            <h6 className="font-bold text-4xl font-poppins font-bold"> Product Details:</h6>
+                            <h3 className="m-2 price-text text-[#002f34] mt-4">Rs. {product.price} /-</h3>
+                            <p className="m-2 font-bold text-xl"> {product.pname} | {product.category} </p>
+                            <p className="m-2 text-success"> {product.pdesc} </p>
+                            {product.addedBy && (
+                              <button 
+                              className="border border-gray-300 rounded-md px-4 py-2 bg-blue-400 text-white hover:bg-blue-600 transition duration-300 ease-in-out"
+                              onClick={() => handleContact(product.addedBy)}
+                          >
+                               CONTACT DETAILS
+                          </button>
+                          
+                            )}
+                            {user && user.username && <h4 className="my-2 text-xl">{user.username}</h4>}
+                            {user && user.mobile && <h3 className="my-2 text-xl">{user.mobile}</h3>}
+                            {user && user.email && <h6 className="my-2 text-xl">{user.email}</h6>}
+                        </div>
+                    </div>
+                )}
+            </div>
+        </>
+    );
 }
 
 export default ProductDetail;

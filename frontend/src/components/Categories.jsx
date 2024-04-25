@@ -10,7 +10,7 @@ function Categories(props) {
         <div>
             <div className='cat-container'>
             <div>
-                <span className='pr-3'>All Categories</span>
+                <span className='pr-3' onClick={()=>navigate('/')}>All Categories</span>
                 {categories && categories.length > 0 &&
                     categories.map((item, index) => {
                         return (

@@ -83,7 +83,7 @@ function LikedProducts() {
         <div>
             <Header search={search} handlesearch={handlesearch} handleClick={handleClick} />
             <Categories handleCategory={handleCategory} />
-            <h5> SEARCH RESULTS </h5>
+            <h5 className="font-bold text-4xl font-poppins font-bold"> Like Products  </h5>
             <div className="d-flex justify-content-center flex-wrap">
                 {cproducts && products.length > 0 &&
                     cproducts.map((item, index) => {
@@ -104,7 +104,7 @@ function LikedProducts() {
                     })}
             </div>
 
-            <h5> ALL RESULTS  </h5>
+            <h5 className=""> ALL RESULTS  </h5>
 
             <div className="d-flex justify-content-center flex-wrap">
                 {products && products.length > 0 &&

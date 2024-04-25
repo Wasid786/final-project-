@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "./Header";
 import { useState } from "react";
 import axios from "axios";
@@ -10,7 +10,8 @@ function Signup() {
     const [password, setpassword] = useState('');
     const [email, setemail] = useState('');
     const [mobile, setmobile] = useState('');
-
+     
+    const navigator = useNavigate();
 
     const handleApi = () => {
         const url = API_URL + '/signup';
@@ -18,6 +19,7 @@ function Signup() {
         axios.post(url, data)
             .then((res) => {
                 if (res.data.message) {
+                  navigator('/login')
                     alert(res.data.message);
                 }
             })
@@ -28,7 +30,7 @@ function Signup() {
 
     return (
         <div>
-            <Header />
+          
             <div className="w-2/6 mx-auto h-full">
 <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
      <h3>Welcome to Signup Page  </h3>
@@ -138,7 +140,7 @@ Mobile
 </div>
 </div>
      <br></br>
-     <button className="btn btn-primary mr-3" onClick={handleApi}> LOGIN </button>
+     <button className="btn btn-primary mr-3" onClick={handleApi}> <Link className="m-3">  SignUp</Link> </button>
      <p className="mt-10 text-center text-sm text-gray-500">
 already a member?
 <a

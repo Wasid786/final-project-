@@ -10,15 +10,12 @@ function Footer() {
           <div className="ft-info-p1">
             <p className="ft-title text-3xl md:text-4xl">
               <div>
-              National Charitable
+              PetOpt <span className="ft-sign">+</span>
               </div>
               
-               Pathology Lab <span className="ft-sign">+</span>
             </p>
             <p className="ft-description mt-5">
-              Talk to online doctors and get medical advice, online
-              prescriptions, refills and medical notes within minutes. On-demand
-              healthcare services at your fingertips.
+            Discover pet care essentials, grooming services, and community support at PetOpt. Your furry friend's happiness awaits!
             </p>
           </div>
 

@@ -80,11 +80,11 @@ function MyProducts() {
 
 
     return (
-        <div>
+        <div className="">
             <Header search={search} handlesearch={handlesearch} handleClick={handleClick} />
             <Categories handleCategory={handleCategory} />
 
-            <div className="d-flex justify-content-center flex-wrap">
+            <div className="d-flex justify-content-center mx-2  flex-wrap">
                 {cproducts && products.length > 0 &&
                     cproducts.map((item, index) => {
 
@@ -104,7 +104,7 @@ function MyProducts() {
                     })}
             </div>
 
-            <h5> ALL RESULTS  </h5>
+            <h5 className="font-bold text-4xl font-poppins font-bold mx-2 my-4"> ALL RESULTS  </h5>
 
             <div className="d-flex justify-content-center flex-wrap">
                 {products && products.length > 0 &&

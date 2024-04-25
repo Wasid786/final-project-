@@ -28,9 +28,14 @@ const port = 4000
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://127.0.0.1:27017/olx06')
 
-app.get('/', (req, res) => {
-    res.send('hello...')
-})
+// mongoose.connect('mongodb+srv://wasidansari5284:wasidpassword@mern-blog.bfs9dpn.mongodb.net/petopt?retryWrites=true&w=majority&appName=Mern-blog')
+    .then(() => {
+        console.log('Connected to MongoDB');
+    })
+    .catch((error) => {
+        console.error('Error connecting to MongoDB Atlas:', error);
+    });
+
 
 app.get('/search', productController.search)
 app.post('/like-product', userController.likeProducts)
@@ -44,6 +49,10 @@ app.get('/my-profile/:userId', userController.myProfileById)
 app.get('/get-user/:uId', userController.getUserById)
 app.post('/login', userController.login)
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-})
+try {
+    app.listen(port, () => {
+        console.log(`App listening on port ${port}`);
+    });
+} catch (error) {
+    console.error('Error starting the server:', error);
+}
