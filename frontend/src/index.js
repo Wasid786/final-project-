@@ -7,15 +7,16 @@ import {
   Route,
   Link,
 } from "react-router-dom";
-import Home from './components/Home';
-import Login from './components/Login';
-import Signup from './components/Signup';
-import AddProduct from './components/AddProduct';
-import LikedProducts from './components/LikedProducts';
-import ProductDetail from './components/ProductDetail';
-import CategoryPage from './components/CategoryPage';
-import MyProducts from './components/MyProducts';
-import MyProfile from './components/MyProfile';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import AddProduct from './pages/AddProduct';
+import LikedProducts from './pages/LikedProducts';
+import ProductDetail from './pages/ProductDetail';
+import CategoryPage from './pages/CategoryPage';
+import MyProducts from './pages/MyProducts';
+import MyProfile from './pages/MyProfile';
+import About from './pages/About';
 
 const router = createBrowserRouter([
   {
@@ -27,8 +28,12 @@ const router = createBrowserRouter([
     element: (<CategoryPage />),
   },
   {
-    path: "about",
+    path: "/contact",
     element: <div>About</div>,
+  },
+  {
+    path: "/about",
+    element: (<About />),
   },
   {
     path: "/login",

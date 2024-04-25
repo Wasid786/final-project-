@@ -10,12 +10,12 @@ function Footer() {
           <div className="ft-info-p1">
             <p className="ft-title text-3xl md:text-4xl">
               <div>
-              PetOpt <span className="ft-sign">+</span>
+              Purrfect <span className="ft-sign">+</span>
               </div>
               
             </p>
             <p className="ft-description mt-5">
-            Discover pet care essentials, grooming services, and community support at PetOpt. Your furry friend's happiness awaits!
+            Discover pet care essentials, grooming services, and community support at Purrfect. Your furry friend's happiness awaits!
             </p>
           </div>
 

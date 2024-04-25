@@ -4,6 +4,9 @@ import { FaSearch } from "react-icons/fa";
 import { useState } from 'react';
 import { BsPersonCircle } from "react-icons/bs";
 import Logo from "../assets/home.png"
+import { MdAlternateEmail } from "react-icons/md";
+import { BsInfoCircleFill } from "react-icons/bs";
+
 function Header(props) {
 
     const [loc, setLoc] = useState(null)
@@ -59,15 +62,18 @@ function Header(props) {
                 <button className='search-btn' onClick={() => props.handleClick && props.handleClick()} > <FaSearch /> </button>
             </div>
 
-            <div>
+            <div className='flex item-center space-evenly gap-4 text-[#002f34] '>
+      <div>      <Link className='links' to="/"/><MdAlternateEmail size={30} color='[#fff]'/></div>
+      <Link to="/about">
+  <BsInfoCircleFill className='' size={30} />
+</Link>
 
 
 
 
 
 
-
-                <div className='text-white w-10 h-10 flex justify-center  items-center bg-[#002f34] rounded-full   '
+                <div className='text-white w-10 h-10 flex justify-center   bg-[#002f34] rounded-full   '
                     onClick={() => {
                         setshowOver(!showOver)
                     }}
