@@ -4,48 +4,54 @@ import "../styles/About.css";
 import AboutInfoCard from "../Components/AboutInfoCard";
 import AboutSolutionStep from "../Components/AboutSolutionStep";
 
-
-
 function About() {
-    return (
-        <div>
-            <div className="about-section" id="about">
-                <div className="about-image-content">
-                    <img src={Dog} alt="Doctor Group" className="about-image1 hidden md:block rounded-xl" />
-                </div>
-
-                <div className="about-text-content md:text-xl">
-                    <h3 className="about-title">
-                        <span>About Us</span>
-                    </h3>
-                    <p className="about-description md:text-xl">
-                        Welcome to National Charitable Pathology Lab, your trusted partner for accessible and
-                        personalized healthcare. Our expert faculty offer online booking
-                        and specialized services, prioritizing your well-being. Join us on
-                        this journey towards a healthier you.
-                    </p>
-
-                    <h4 className="about-text-title">Your Solutions</h4>
-
-                    <AboutSolutionStep
-                        title="Choose a Specialist"
-                        description="Find your perfect specialist and book with ease at National Charitable Pathology Lab. Expert doctors prioritize your health, offering tailored care."
-                    />
-
-                    <AboutSolutionStep
-                        title="Make a Schedule"
-                        description="Choose the date and time that suits you best, and let our dedicated team of medical professionals ensure your well-being with personalized care."
-                    />
-
-                    <AboutSolutionStep
-                        title="Get Your Solutions"
-                        description="Our experienced technologist  and specialists are here to provide expert advice and personalized treatment plans, helping you achieve your best possible health."
-                    />
-                </div>
-            </div>
-            <AboutInfoCard />
+  return (
+    <div>
+      <div className="about-section" id="about">
+        <div className="about-image-content">
+          <img
+            src={Dog}
+            alt="Doctor Group"
+            className="about-image1 hidden md:block rounded-xl"
+          />
         </div>
-    );
+
+        <div className="about-text-content md:text-xl">
+          <h3 className="about-title">
+            <span>About Us</span>
+          </h3>
+          <p className="about-description md:text-xl">
+            Welcome to Purrfect Pet Marketplace, where pet lovers unite! Our
+            platform mirrors the simplicity and transparency of OLX, connecting
+            buyers and sellers directly, sans fees or middlemen. Whether you
+            seek a faithful canine companion or a mischievous feline friend, our
+            user-friendly features streamline the process, ensuring a seamless
+            adoption journey.
+          </p>
+
+          <h4 className="about-text-title">Your Solutions</h4>
+
+          <AboutSolutionStep
+            title="Pet Adoption Verification"
+            description=" Sellers can provide documentation proving the pet's health status, vaccination records,
+             and origin, fostering trust and transparency among buyers."
+          />
+
+          <AboutSolutionStep
+            title="Pet Care Resources:"
+            description="Assist both new and experienced pet owners
+             in providing optimal care for their furry companions."
+          />
+
+          <AboutSolutionStep
+            title="Community Forums:"
+            description="Create online forums where pet enthusiasts can connect, share experiences, and seek advice on various pet-related topics."
+          />
+        </div>
+      </div>
+      <AboutInfoCard />
+    </div>
+  );
 }
 
 export default About;

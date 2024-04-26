@@ -2,9 +2,9 @@ import React from "react";
 import { FaTruckMedical } from "react-icons/fa6";
 import "../styles/AboutInfoCard.css";
 import InformationCard from "./InformationCard";
-// import checkup from "../assets/checkup.png";
-// import equipment from "../assets/equipment.png";
-// import service from "../assets/service.png";
+import Convenience from "../assets/about01.png";
+import Variety from "../assets/about02.png";
+import Accessibility from "../assets/about03.png";
 
 function AboutInfoCard() {
   return (
@@ -14,44 +14,34 @@ function AboutInfoCard() {
           <span>What We Do</span>
         </h3>
         <p className="info-description text-xl">
-          We bring healthcare to your convenience, offering a comprehensive
-          range of on-demand medical services tailored to your needs. Our
-          platform allows you to connect with experienced online doctors who
-          provide expert medical advice, issue online prescriptions, and offer
-          quick refills whenever you require them.
+        
+Discover our online pet marketplace, echoing OLX's model, connecting buyers and sellers directly without fees or brokers. Find your perfect pet hassle-free, whether it's a loyal dog or a playful cat. With user-friendly features,
+ our platform simplifies the process, making it easy to welcome a new furry friend into your home.
         </p>
       </div>
 
       <div className="info-cards-content">
         <InformationCard
-          title="Home Collection "
-          description="Smile with confidence as our Home Collection services cater to all your
-             health needs. Our skilled technologist  provide a wide range of
-            tests, from routine check-ups and cleanings to cosmetic
-            procedures and restorative treatments."
-          // image={equipment}
+          title="Convenience"
+          description="OLX offers a seamless platform for buying and selling goods, allowing users to browse listings, communicate with sellers, and make transactions from the 
+          comfort of their homes, eliminating the need for physical visits to stores or markets."
+          image={Convenience}
 
         />
 
         <InformationCard
-          title="Emergency Care "
-          description="Our Emergency Care service is designed to be your reliable support
-            in critical situations. Whether it's a sudden illness, injury, or
-            any medical concern that requires immediate attention, our team of
-            dedicated healthcare professionals is available 24/7 to provide
-            prompt and efficient care."
-          // image={service}
+          title="Variety"
+          description="With a vast array of categories and listings, OLX provides users with unparalleled choice, enabling them to find everything from electronics and vehicles to clothing and furniture, catering to 
+          diverse needs and preferences with options ranging from brand new items to second-hand bargains."
+          image={Variety}
         />
 
         <InformationCard
-          title="Personalized CheckUp "
-          description="Our team of experienced technologist  and medical experts use
-            state-of-the-art technology to assess your  health and
-            design personalized treatment plans. From comprehensive screenings
-            to advanced interventions, we are committed to helping you maintain
-            a fulfilling life."
+          title="Accessibility"
+          description="OLX's user-friendly interface and mobile app ensure accessibility for all, empowering users to buy and sell anytime, anywhere, with just a few taps on their smartphones or clicks on their computers,
+           democratizing commerce and enabling participation from a wide range of demographics and locations"
 
-          // image={checkup}
+          image={Accessibility}
 
         />
 

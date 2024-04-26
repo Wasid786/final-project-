@@ -24,7 +24,13 @@ function Header(props) {
         {
             "latitude": 28.6139,
             "longitude": 77.2090,
-            "placeName": "New Delhi, Delhi"
+            "placeName": "  ---Select City----"
+        },
+        
+        {
+            "latitude": 27.8815411,
+            "longitude": 78.06902138888888,
+            "placeName": "Aligarh, Uttar Pradesh"
         },
         {
             "latitude": 19.0760,
@@ -39,27 +45,34 @@ function Header(props) {
             <div className="header flex ">
                     <div className='w-12 mr-5'> <Link className='links' to="/">  <img src={Logo} alt="Home" /> </Link>
                 </div>
-                <select value={loc} onChange={(e) => {
-                    localStorage.setItem('userLoc', e.target.value)
-                    setLoc(e.target.value)
-                }} >
-                    {
-                        locations.map((item, index) => {
-                            return (
-                                <option value={`${item.latitude},${item.longitude}`} >
-                                    {item.placeName}
-                                </option>
-                            )
-                        })
-                    }
-                </select>
+                <select 
+    value={loc} 
+    onChange={(e) => {
+        localStorage.setItem('userLoc', e.target.value)
+        setLoc(e.target.value)
+    }}
+    className="border border-blue-500  bg-white  rounded-md shadow-base p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+>
+    {
+        locations.map((item, index) => {
+            return (
+                <option key={index} value={`${item.latitude},${item.longitude}`}>
+                    {item.placeName}
+                </option>
+            )
+        })
+    }
+</select>
+
+
                 <input className='search'
                     type='text'
                     value={props && props.search}
                     onChange={(e) => props.handlesearch && props.handlesearch(e.target.value)
                     }
                 />
-                <button className='search-btn' onClick={() => props.handleClick && props.handleClick()} > <FaSearch /> </button>
+                <button className='search-btn' onClick={() => props.handleClick && props.handleClick()} >
+                     <FaSearch /> </button>
             </div>
 
             <div className='flex item-center space-evenly gap-4 text-[#002f34] '>
@@ -121,7 +134,8 @@ function Header(props) {
                         {!!localStorage.getItem('token') &&
                             <Link to="/my-products">
                                 <button className="logout-btn">MY ADS  </button>
-                            </Link>}
+                            </Link>
+                            }
                     </div>
                     <div>
                         {!localStorage.getItem('token') ?

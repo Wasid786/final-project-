@@ -17,6 +17,7 @@ import CategoryPage from './pages/CategoryPage';
 import MyProducts from './pages/MyProducts';
 import MyProfile from './pages/MyProfile';
 import About from './pages/About';
+import PageNotFound from './pages/pagenotfound';
 
 const router = createBrowserRouter([
   {
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
   {
     path: "/my-profile",
     element: (<MyProfile />),
+  },
+  {
+    path: "/*",
+    element: (<PageNotFound/>),
   },
 ]);
 
