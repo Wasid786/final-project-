@@ -76,10 +76,12 @@ function Header(props) {
             </div>
 
             <div className='flex item-center space-evenly gap-4 text-[#002f34] '>
-      <div>      <Link className='links' to="/"/><MdAlternateEmail size={30} color='[#fff]'/></div>
-      <Link to="/about">
+      <div>  
+            <Link to="/contact"><MdAlternateEmail size={30} color='[#fff]'/> </Link>
+      </div>
+     <div> <Link to="/about">
   <BsInfoCircleFill className='' size={30} />
-</Link>
+</Link></div>
 
 
 

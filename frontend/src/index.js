@@ -18,6 +18,7 @@ import MyProducts from './pages/MyProducts';
 import MyProfile from './pages/MyProfile';
 import About from './pages/About';
 import PageNotFound from './pages/pagenotfound';
+import Contact from './pages/Contact';
 
 const router = createBrowserRouter([
   {
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/contact",
-    element: <div>About</div>,
+    element: (<Contact />),
   },
   {
     path: "/about",
