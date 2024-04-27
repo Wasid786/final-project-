@@ -28,15 +28,28 @@ module.exports.signup = (req, res) => {
     const password = req.body.password;
     const email = req.body.email;
     const mobile = req.body.mobile;
-    const user = new Users({ username: username, password: password, email, mobile });
-    user.save()
-        .then(() => {
-            res.send({ message: 'saved success.' })
+
+    // Check if the email already exists in the database
+    Users.findOne({ email: email })
+        .then(existingUser => {
+            if (existingUser) {
+                // Email already exists, send error response
+                res.status(400).send({ message: 'Email already exists. Please try a different email.' });
+            } else {
+                // Email doesn't exist, create a new user
+                const user = new Users({ username: username, password: password, email: email, mobile: mobile });
+                user.save()
+                    .then(() => {
+                        res.send({ message: 'Saved successfully.' });
+                    })
+                    .catch(() => {
+                        res.status(500).send({ message: 'Server error.' });
+                    });
+            }
         })
         .catch(() => {
-            res.send({ message: 'server err' })
-        })
-
+            res.status(500).send({ message: 'Server error.' });
+        });
 }
 
 module.exports.myProfileById = (req, res) => {
