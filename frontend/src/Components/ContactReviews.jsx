@@ -34,7 +34,7 @@ function ContactReviews() {
     <div className="review-section" id="reviews">
       <div className="rw-text-content">
         <p className="rw-text-title">
-          More over <span className="rw-text-num">1500+ Customers</span>
+          More over <span className="rw-text-num">1500+ Users</span>
         </p>
 
         <p className="rw-text-desc">Don't believe us, Check clients word</p>

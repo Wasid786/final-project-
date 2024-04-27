@@ -26,19 +26,19 @@ function Footer() {
           <p className="ft-list-title">Services</p>
           <ul className="ft-list-items">
             <li>
-              <a href="#services">Emergency Care</a>
+              <a href="#services">24/7 Service </a>
             </li>
             <li>
-              <a href="#services">Heart Disease</a>
+              <a href="#services">Enrollment Easy  </a>
             </li>
             <li>
-              <a href="#services">Dental Care</a>
+              <a href="#services">24/7 Support </a>
             </li>
             <li>
-              <a href="#services">Prescription</a>
+              <a href="#services">Healthy Community </a>
             </li>
             <li>
-              <a href="#services">Insights for doctors</a>
+              <a href="#services">Insights for Pets</a>
             </li>
           </ul>
         </div>
@@ -73,18 +73,18 @@ function Footer() {
           <p className="ft-list-title">Talk To Us</p>
           <ul className="ft-list-items">
             <li>
-              <a href="mailto:nationalcharitablepathologylab@gmail.com">nationalcharitablepathologylab@gmail.com</a>
+              <a href="mailto:nationalcharitablepathologylab@gmail.com">wasidansari5284@gmail.com</a>
             </li>
             <li>
               <a href="mailto:sameerali53009@gmail.com">
-                sameerali53009@gmail.com
+                madara21cabsa342@gmail.com
               </a>
             </li>
             <li>
-              <a href="tel:+91 8630633575">+91 8630633575</a>
+              <a href="tel:+91 8630633575">+91 967854120</a>
             </li>
             <li>
-              <a href="tel:+91 8445315542">+91 8445315542</a>
+              <a href="tel:+91 8445315542">+91 8754120369</a>
             </li>
           </ul>
         </div>

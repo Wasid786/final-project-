@@ -22,7 +22,7 @@ function About() {
           </h3>
           <p className="about-description md:text-xl">
             Welcome to Purrfect Pet Marketplace, where pet lovers unite! Our
-            platform mirrors the simplicity and transparency of OLX, connecting
+            platform mirrors the simplicity and transparency it connect
             buyers and sellers directly, sans fees or middlemen. Whether you
             seek a faithful canine companion or a mischievous feline friend, our
             user-friendly features streamline the process, ensuring a seamless

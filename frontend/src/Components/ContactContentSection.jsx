@@ -39,7 +39,7 @@ function ContactContentSection() {
             <FaCircleCheck />
 
           </p>
-          <div> Best Professional Doctors</div>
+          <div> Best Community</div>
         </div>
         <div className="ba-checks ba-check-first flex gap-3 items-center text-blue-400">
 
@@ -47,7 +47,7 @@ function ContactContentSection() {
             <FaCircleCheck />
 
           </p>
-          <div>   Emergency Care</div>
+          <div>Transprency</div>
         </div>
         <div className="ba-checks ba-check-first flex gap-3 items-center text-blue-400">
 
@@ -55,7 +55,7 @@ function ContactContentSection() {
             <FaCircleCheck />
 
           </p>
-          <div>  24/7 Support Live Chat</div>
+          <div>  24/7 Support </div>
         </div>
         <div className="ba-checks ba-check-first flex gap-3 items-center text-blue-400">
 
