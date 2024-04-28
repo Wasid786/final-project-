@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Header from "./Header";
+import Rating from "../Components/Rating";
 import './Home.css';
 import API_URL from "../constants";
 
@@ -42,6 +43,7 @@ function ProductDetail() {
 
     return (
         <>
+        
             <Header />
             {/* <div className="text-3xl font-poppins font-bold ">PRODUCT DETAILS:</div> */}
             <div className="mx-auto mt-10">
@@ -73,6 +75,7 @@ function ProductDetail() {
                     </div>
                 )}
             </div>
+                 <Rating/>
         </>
     );
 }
