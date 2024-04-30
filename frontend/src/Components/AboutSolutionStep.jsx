@@ -6,7 +6,7 @@ function AboutSolutionStep(props) {
     <div className="about-text-step">
       <p className="about-text-sTitle md:text-2xl">
         <span className="flex  gap-3 text-blue-500 ">
-          <div className=""><FaCircleChevronDown size={25} /></div>
+          <div className="text-3xl"><FaCircleChevronDown size={25} /></div>
           {props.title}
         </span>
       </p>

@@ -1,9 +1,45 @@
-import React from "react";
+
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
+
 
 
 function AboutSolutionStep(props) {
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault(); 
+  
+    // Check if any input field is empty
+    if (!form.current.name.value || !form.current.message.value) {
+      alert("Please fill in both input fields.");
+      return;
+    }
+  
+    emailjs
+      .sendForm(
+        "service_flzx4kx",
+        "template_b4o8f6c",
+        form.current,
+        "p_Enbrt9PRpWjREwg"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          console.log("message sent");
+          alert("Message Sent Successfully");
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+
+  };
+
+  
   return (
-    <div className="">
+    <form ref={form} onSubmit={sendEmail}>
      <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
   <div className="py-3 sm:max-w-xl sm:mx-auto">
     <div className="bg-white min-w-1xl flex flex-col rounded-xl shadow-lg">
@@ -61,11 +97,21 @@ function AboutSolutionStep(props) {
           </div>
         </div>
         <div className="w-3/4 flex flex-col">
+        
+       <div className="gap-3 flex flex-col w-full">
+       <input type="text" name="name"
+        placeholder="Enter Your Name: "
+        required className="p-2 text-gray-500 rounded-xl resize-none " />
           <textarea
             rows={3}
-            className="p-4 text-gray-500 rounded-xl resize-none"
+            name="message"
+            required
+            className="p-4 text-gray-500 rounded-xl w-full resize-none"
              placeholder="Leave a message, if you want"
           />
+       </div>
+           
+      
           <button className="py-3 my-8 text-lg bg-gradient-to-r from-blue-500 to-blue-400 hover:bg-blue-600 translate transition-colors  rounded-xl text-white">
             Rate now
           </button>
@@ -81,7 +127,7 @@ function AboutSolutionStep(props) {
   </div>
 </div>
 
-    </div>
+    </form>
   );
 }
 
