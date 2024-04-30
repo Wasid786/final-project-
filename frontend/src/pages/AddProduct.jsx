@@ -4,6 +4,7 @@ import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import categories from "./CategoriesList";
 import API_URL from "../constants";
+import toast from "react-hot-toast"
 
 function AddProduct() {
 
@@ -40,12 +41,12 @@ function AddProduct() {
             axios.post(url, formData)
                 .then((res) => {
                     if (res.data.message) {
-                        alert(res.data.message); 
+                        toast.success(res.data.message); 
                         navigate('/')
                     }
                 })
                 .catch((err) => {
-                    alert('server err')
+                    toast.error('server err')
                 })
         })
 

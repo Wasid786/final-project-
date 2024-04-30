@@ -6,7 +6,7 @@ import Categories from "./Categories";
 import { FaHeart } from "react-icons/fa";
 import './Home.css';
 import API_URL from "../constants";
-
+import toast from "react-hot-toast"
 
 function MyProducts() {
 
@@ -32,7 +32,7 @@ function MyProducts() {
                 }
             })
             .catch((err) => {
-                alert('Server Err.')
+                toast.error('Server Err.')
             })
     }, [])
 
@@ -69,11 +69,11 @@ function MyProducts() {
         axios.post(url, data)
             .then((res) => {
                 if (res.data.message) {
-                    alert('Liked.')
+                    toast.success('Liked.')
                 }
             })
             .catch((err) => {
-                alert('Server Err.')
+                toast.error('Server Err.')
             })
 
     }
@@ -104,7 +104,7 @@ function MyProducts() {
                     })}
             </div>
 
-            <h5 className="font-bold text-4xl font-poppins font-bold mx-2 my-4"> ALL RESULTS  </h5>
+            <h5 className="font-bold text-4xl font-poppins mx-2 my-4"> ALL RESULTS  </h5>
 
             <div className="d-flex justify-content-center flex-wrap">
                 {products && products.length > 0 &&

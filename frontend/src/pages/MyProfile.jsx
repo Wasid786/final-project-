@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Header from "./Header";
 import axios from "axios";
 import API_URL from "../constants";
+import toast from "react-hot-toast"
+
 
 function MyProfile() {
 
@@ -17,7 +19,7 @@ function MyProfile() {
                 }
             })
             .catch((err) => {
-                alert('Server Err.')
+                toast.error('Server Err.')
             })
     }, [])
 

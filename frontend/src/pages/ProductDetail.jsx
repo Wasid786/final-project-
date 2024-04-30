@@ -5,6 +5,8 @@ import Header from "./Header";
 import Rating from "../Components/Rating";
 import './Home.css';
 import API_URL from "../constants";
+import toast from "react-hot-toast"
+
 
 function ProductDetail() {
 
@@ -22,7 +24,7 @@ function ProductDetail() {
                 }
             })
             .catch((err) => {
-                alert('Server Err.')
+                toast.error('Server Err.')
             })
     }, [])
 
@@ -37,7 +39,7 @@ function ProductDetail() {
                 }
             })
             .catch((err) => {
-                alert('Server Err.')
+                toast.error('Server Err.')
             })
     }
 

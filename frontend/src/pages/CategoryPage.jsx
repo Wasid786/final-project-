@@ -6,7 +6,7 @@ import Categories from "./Categories";
 import { FaHeart } from "react-icons/fa";
 import './Home.css';
 import API_URL from "../constants";
-
+import toast from "react-hot-toast"
 
 
 function CategoryPage() {
@@ -36,7 +36,7 @@ function CategoryPage() {
                 }
             })
             .catch((err) => {
-                alert('Server Err.')
+                toast.error('Server Err.')
             })
     }, [param])
 
@@ -53,7 +53,7 @@ function CategoryPage() {
                 setissearch(true);
             })
             .catch((err) => {
-                alert('Server Err.')
+                toast.error('Server Err.')
             })
 
         // let filteredProducts = products.filter((item) => {
@@ -84,11 +84,11 @@ function CategoryPage() {
         axios.post(url, data)
             .then((res) => {
                 if (res.data.message) {
-                    alert('Liked.')
+                    toast.success('Liked.')
                 }
             })
             .catch((err) => {
-                alert('Server Err.')
+                toast.error('Server Err.')
             })
 
     }

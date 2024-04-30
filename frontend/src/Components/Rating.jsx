@@ -1,7 +1,7 @@
 
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
-
+import toast from "react-hot-toast"
 
 
 function AboutSolutionStep(props) {
@@ -13,7 +13,7 @@ function AboutSolutionStep(props) {
   
     // Check if any input field is empty
     if (!form.current.name.value || !form.current.message.value) {
-      alert("Please fill in both input fields.");
+      toast.error("Please fill in both input fields.");
       return;
     }
   
@@ -28,7 +28,7 @@ function AboutSolutionStep(props) {
         (result) => {
           console.log(result.text);
           console.log("message sent");
-          alert("Message Sent Successfully");
+          toast.success("Message Sent Successfully");
         },
         (error) => {
           console.log(error.text);

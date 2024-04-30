@@ -19,6 +19,8 @@ import MyProfile from './pages/MyProfile';
 import About from './pages/About';
 import PageNotFound from './pages/pagenotfound';
 import Contact from './pages/Contact';
+import  { Toaster } from 'react-hot-toast'
+
 
 const router = createBrowserRouter([
   {
@@ -72,5 +74,10 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+
+   <>
+    <RouterProvider router={router} /> 
+    <Toaster/>
+   </>
+   
 );
