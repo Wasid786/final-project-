@@ -143,7 +143,10 @@ function Home() {
                     products.map((item, index) => {
 
                         return (
-                            <div onClick={() => handleProduct(item._id)} key={item._id} className="card m-3">
+                            <div onClick={() => handleProduct(item._id)} key={item._id} className="card m-3 
+                            cursor-pointer  rounded-lg 
+                            transform transition duration-500 
+                            hover:scale-110">
                                 <div onClick={(e) => handleLike(item._id, e)} className="icon-con">
                                     <FaHeart className="icons" />
                                 </div>
