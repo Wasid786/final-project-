@@ -3,9 +3,10 @@ import { useState } from "react";
 import axios from "axios";
 import API_URL from "../constants";
 import Logo from "../assets/home.png";
-import background from "../assets/login.jpg";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import toast from "react-hot-toast";
+import background from "../assets/bg03.jpg";
+
 
 function Login() {
   const navigate = useNavigate();
@@ -35,7 +36,9 @@ function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen flex items-center z-10 relative justify-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+      {/* <img src={background} className="  opacity-20 object-cover w-full" alt="" /> */}
+       
       <div className="absolute inset-0 bg-cover bg-no-repeat" style={{ backgroundImage: `url(${background})`, filter: 'blur(4px)', zIndex: -1 }} />
       <div className="max-w-md w-full space-y-8 p-8 bg-white rounded-lg shadow-lg z-10">
         <div>

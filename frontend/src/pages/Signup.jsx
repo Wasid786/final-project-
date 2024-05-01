@@ -41,10 +41,9 @@ function Signup() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
-      {/* <div className="absolute inset-0 bg-cover bg-no-repeat" style={{ backgroundImage: `url(${background})`,
-       filter: 'blur(4px)', zIndex: -1 }} /> */}
-              
+    <div className="min-h-screen flex items-center z-10 relative justify-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 bg-cover bg-no-repeat" style={{ backgroundImage: `url(${background})`, filter: 'blur(4px)', zIndex: -1 }} />
+ 
       <div className="max-w-md w-full space-y-8 p-8 bg-white rounded-lg shadow-lg z-10">
         <div>
           <div className="text-center">
