@@ -85,7 +85,7 @@ function Login() {
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="text-gray-500 hover:text-indigo-500 focus:outline-none focus:text-indigo-500"
+                    className="text-gray-500 hover:text-blue-500 focus:outline-none focus:text-blue-500"
                   >
                     {showPassword ? <FaRegEyeSlash /> : <FaRegEye />}
                   </button>

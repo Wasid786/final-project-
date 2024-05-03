@@ -65,14 +65,16 @@ function Header(props) {
 </select>
 
 
-                <input className='search'
+              
+               <input className='search hidden md:block lg:block '
                     type='text'
                     value={props && props.search}
                     onChange={(e) => props.handlesearch && props.handlesearch(e.target.value)
                     }
                 />
-                <button className='search-btn' onClick={() => props.handleClick && props.handleClick()} >
+                <button className='search-btn  hidden md:block lg:block '  onClick={() => props.handleClick && props.handleClick()} >
                      <FaSearch /> </button>
+            
             </div>
 
             <div className='flex item-center space-evenly gap-4 text-[#002f34] '>

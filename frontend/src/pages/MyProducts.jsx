@@ -121,12 +121,8 @@ function MyProducts() {
                                 <p className="m-2 text-success"> {item.pdesc} </p>
                             </div>
                         )
-
-                    })}
+                                          })}
             </div>
-
-
-
         </div>
     )
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import Cat from "../assets/cat02.jpg";
+import Cat from "../assets/contact.jpg";
 import { FaCircleCheck } from "react-icons/fa6";
 import { MdOutlineAddChart } from "react-icons/md";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -66,14 +66,6 @@ function ContactContentSection() {
           <div>   Enrollment Easy and Quick</div>
         </div>
 
-        <button
-          className="text-appointment-btn flex gap-2 px-5 py-2 rounded-3xl text-white text-2xl  items-center hover:bg-blue-600 bg-[#1a8efd]"
-          type="button"
-          onClick={handleBookAppointmentClick}
-        >
-          <MdOutlineAddChart style={{ fontSize: 25, color: "white" }} />
-          <div> Send Feedback</div>
-        </button>
       </div>
     </div>
   );

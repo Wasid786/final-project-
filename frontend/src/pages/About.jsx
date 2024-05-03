@@ -1,5 +1,5 @@
 import React from "react";
-import Dog from "../assets/dog01.jpg";
+import Dog from "../assets/about.jpg";
 import "../styles/About.css";
 import AboutInfoCard from "../Components/AboutInfoCard";
 import AboutSolutionStep from "../Components/AboutSolutionStep";
