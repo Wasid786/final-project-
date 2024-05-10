@@ -108,7 +108,7 @@ function CategoryPage() {
                     <button className="clear-btn" onClick={() => setissearch(false)}> CLEAR </button>
                 </h5>}
 
-            {issearch && cproducts && cproducts.length == 0 && <h5> No Results Found </h5>}
+            {issearch && cproducts && cproducts.length == 0 && <h5> No Results Found In Your City </h5>}
             {issearch && <div className="d-flex justify-content-center flex-wrap">
                 {cproducts && products.length > 0 &&
                     cproducts.map((item, index) => {

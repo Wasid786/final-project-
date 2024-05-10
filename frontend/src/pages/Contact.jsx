@@ -15,7 +15,7 @@ const Contact = () => {
                             <div className='text-blue-500 font-bold'>Purrfect</div>
                             <div className='md:mt-1 text-blue-500'>
                                 <div> Opp. Jama Masjid Upper Fort Aligarh-202001</div>
-                                <div className='mt-1'> Mob: +91 8810090706</div>
+                                <div className='mt-1'> Mob: +91 9389746454</div>
                             </div>
                             <div>
                                 <div className='font-bold md:text-3xl text-base text-black  md:pt-5 mt-2 md:mb-5'>

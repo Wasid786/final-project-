@@ -41,12 +41,12 @@ export const customerReviews = [
   },
   {
     "name": "Sarah Johnson",
-    "location": "Florida, USA",
+    "location": "Aligarh, UttarPradesh",
     "message": "The convenience of accessing pet records online was fantastic. Purrfect made managing my pet's health records hassle-free! Best pet marketplace services."
   },
   {
     "name": "Michael Brown",
-    "location": "New York, USA",
+    "location": "Mumbai, Maharastra",
     "message": "As a busy pet owner, Purrfect has been a lifesaver. Quick deliveries and recommendations without compromising on quality care. Thank you!"
   }
 ];

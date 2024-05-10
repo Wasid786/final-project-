@@ -59,17 +59,17 @@ function AddProduct() {
             <Header />
             <div className="p-3">
 
-                <h2> ADD PRODUCT HERE : </h2>
-                <label> Product Name </label>
+                <h2> ADD PET HERE : </h2>
+                <label> Pet Breed Name </label>
                 <input className="form-control" type="text" value={pname}
                     onChange={(e) => { setpname(e.target.value) }} />
-                <label> Product Description </label>
+                <label> Pet Description </label>
                 <input className="form-control" type="text" value={pdesc}
                     onChange={(e) => { setpdesc(e.target.value) }} />
-                <label> Product Price</label>
+                <label> Pet Price</label>
                 <input className="form-control" type="text" value={price}
                     onChange={(e) => { setprice(e.target.value) }} />
-                <label> Product Category </label>
+                <label> Pet Category </label>
                 <select className="form-control" value={category}
                     onChange={(e) => { setcategory(e.target.value) }}>
                     <option> ---- Select Category ---- </option>
@@ -83,13 +83,13 @@ function AddProduct() {
                         })
                     }
                 </select>
-                <label> Product Image </label>
+                <label> Pet Image </label>
                 <input className="form-control" type="file"
                     onChange={(e) => {
                         setpimage(e.target.files[0])
                     }} />
 
-                <label> Product Second Image </label>
+                <label> Pet Second Image </label>
                 <input className="form-control" type="file"
                     onChange={(e) => {
                         setpimage2(e.target.files[0])
