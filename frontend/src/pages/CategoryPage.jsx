@@ -103,6 +103,8 @@ function CategoryPage() {
         <div>
             <Header search={search} handlesearch={handlesearch} handleClick={handleClick} />
             <Categories handleCategory={handleCategory} />
+            <div className="text-6xl">sorted value </div>
+            
             {issearch && cproducts &&
                 <h5> SEARCH RESULTS
                     <button className="clear-btn" onClick={() => setissearch(false)}> CLEAR </button>
@@ -135,7 +137,7 @@ function CategoryPage() {
 
                         return (
                             <div onClick={() => handleProduct(item._id)} key={item._id} className="card m-3">
-                                <div onClick={() => handleLike(item._id)} className="icon-con">
+                                <div onClick={() => handleLike(item._ijd)} className="icon-con">
                                     <FaHeart className="icons" />
                                 </div>
                                 <img width="250px" height="150px" src={API_URL + '/' + item.pimage} />

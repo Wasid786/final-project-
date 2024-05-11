@@ -51,7 +51,7 @@ function Header(props) {
         localStorage.setItem('userLoc', e.target.value)
         setLoc(e.target.value)
     }}
-    className="border border-blue-500  bg-white  rounded-md shadow-base p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+    className="border border-blue-500 bg-white rounded-md shadow-base p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent " 
 >
     {
         locations.map((item, index) => {
@@ -143,7 +143,7 @@ function Header(props) {
                     </div>
                     <div>
                         {!localStorage.getItem('token') ?
-                            <Link to="/login">  LOGIN </Link> :
+                            <Link className='text-white flex justify-center pt-5' to="/login">  LOGIN </Link> :
                             <button className='logout-btn' onClick={handleLogout}> LOGOUT </button>}
                     </div>
 

@@ -12,7 +12,7 @@ function ProductDetail() {
 
     const [product, setproduct] = useState()
     const [user, setuser] = useState()
-    console.log(user, "userrrrr")
+    
     const p = useParams()
 
     useEffect(() => {
