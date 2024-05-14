@@ -41,13 +41,26 @@ function Home() {
         const url = API_URL + '/search?search=' + search + '&loc=' + localStorage.getItem('userLoc');
         axios.get(url)
             .then((res) => {
-                setCProducts(res.data.products);
+                let sortedSearchResults = res.data.products;
+    
+                // Sort the search results based on price and sortOrder
+                sortedSearchResults.sort((a, b) => {
+                    if (sortOrder === 'asc') {
+                        return a.price - b.price;
+                    } else {
+                        return b.price - a.price;
+                    }
+                });
+    
+                // Update the state with sorted search results
+                setCProducts(sortedSearchResults);
                 setIsSearch(true);
             })
             .catch((err) => {
                 toast.error('Server Err.')
             })
     }
+    
 
     const handleCategory = (value) => {
         let filteredProducts = products.filter((item, index) => {

@@ -6,153 +6,119 @@ import Categories from "./Categories";
 import { FaHeart } from "react-icons/fa";
 import './Home.css';
 import API_URL from "../constants";
-import toast from "react-hot-toast"
-
+import toast from "react-hot-toast";
 
 function CategoryPage() {
 
-    const navigate = useNavigate()
-
-    const param = useParams()
-    console.log(param);
-
-    const [products, setproducts] = useState([]);
-    const [cproducts, setcproducts] = useState([]);
-    const [search, setsearch] = useState('');
-    const [issearch, setissearch] = useState(false);
-
-    // useEffect(() => {
-    //     if (!localStorage.getItem('token')) {
-    //         navigate('/login')
-    //     }
-    // }, [])
+    const navigate = useNavigate();
+    const param = useParams();
+    const [products, setProducts] = useState([]);
+    const [cproducts, setCProducts] = useState([]);
+    const [search, setSearch] = useState('');
+    const [isSearch, setIsSearch] = useState(false);
 
     useEffect(() => {
         const url = API_URL + '/get-products?catName=' + param.catName;
         axios.get(url)
             .then((res) => {
                 if (res.data.products) {
-                    setproducts(res.data.products);
+                    setProducts(res.data.products);
                 }
             })
             .catch((err) => {
-                toast.error('Server Err.')
-            })
-    }, [param])
+                toast.error('Server Err.');
+            });
+    }, [param]);
 
-    const handlesearch = (value) => {
-        setsearch(value);
-    }
+    const handleSearch = (value) => {
+        setSearch(value);
+    };
 
     const handleClick = () => {
-
         const url = API_URL + '/search?search=' + search + '&loc=' + localStorage.getItem('userLoc');
         axios.get(url)
             .then((res) => {
-                setcproducts(res.data.products);
-                setissearch(true);
+                setCProducts(res.data.products);
+                setIsSearch(true);
             })
             .catch((err) => {
-                toast.error('Server Err.')
-            })
-
-        // let filteredProducts = products.filter((item) => {
-        //     if (item.pname.toLowerCase().includes(search.toLowerCase()) ||
-        //         item.pdesc.toLowerCase().includes(search.toLowerCase()) ||
-        //         item.category.toLowerCase().includes(search.toLowerCase())) {
-        //         return item;
-        //     }
-        // })
-        // setcproducts(filteredProducts)
-
-    }
+                toast.error('Server Err.');
+            });
+    };
 
     const handleCategory = (value) => {
-        let filteredProducts = products.filter((item, index) => {
-            if (item.category == value) {
-                return item;
-            }
-        })
-        setcproducts(filteredProducts)
-    }
+        let filteredProducts = products.filter((item) => item.category === value);
+        setCProducts(filteredProducts);
+    };
 
     const handleLike = (productId) => {
         let userId = localStorage.getItem('userId');
-
         const url = API_URL + '/like-product';
-        const data = { userId, productId }
+        const data = { userId, productId };
         axios.post(url, data)
             .then((res) => {
                 if (res.data.message) {
-                    toast.success('Liked.')
+                    toast.success('Liked.');
                 }
             })
             .catch((err) => {
-                toast.error('Server Err.')
-            })
-
-    }
-
+                toast.error('Server Err.');
+            });
+    };
 
     const handleProduct = (id) => {
-        navigate('/product/' + id)
-    }
+        navigate('/product/' + id);
+    };
 
+    // Sorting function to sort products by price in ascending order
+    const sortProductsByPrice = (products) => {
+        return products.sort((a, b) => a.price - b.price);
+    };
 
     return (
         <div>
-            <Header search={search} handlesearch={handlesearch} handleClick={handleClick} />
+            <Header search={search} handlesearch={handleSearch} handleClick={handleClick} />
             <Categories handleCategory={handleCategory} />
-            <div className="text-6xl">sorted value </div>
-            
-            {issearch && cproducts &&
+            <div className="text-3xl ml-3">Search Category </div>
+
+            {isSearch && cproducts &&
                 <h5> SEARCH RESULTS
-                    <button className="clear-btn" onClick={() => setissearch(false)}> CLEAR </button>
+                    <button className="clear-btn" onClick={() => setIsSearch(false)}> CLEAR </button>
                 </h5>}
 
-            {issearch && cproducts && cproducts.length == 0 && <h5> No Results Found In Your City </h5>}
-            {issearch && <div className="d-flex justify-content-center flex-wrap">
-                {cproducts && products.length > 0 &&
-                    cproducts.map((item, index) => {
-
-                        return (
-                            <div key={item._id} className="card m-3 ">
-                                <div onClick={() => handleLike(item._id)} className="icon-con">
-                                    <FaHeart className="icons" />
-                                </div>
-                                <img width="300px" height="200px" src={API_URL + '/' + item.pimage} />
-
-                                <p className="m-2"> {item.pname}  | {item.category} </p>
-                                <h3 className="m-2 text-danger"> {item.price} </h3>
-                                <p className="m-2 text-success"> {item.pdesc} </p>
+            {isSearch && cproducts && cproducts.length === 0 && <h5> No Results Found In Your City </h5>}
+            {isSearch && <div className="d-flex justify-content-center flex-wrap">
+                {cproducts && cproducts.length > 0 &&
+                    sortProductsByPrice(cproducts).map((item, index) => (
+                        <div key={item._id} className="card m-3 ">
+                            <div onClick={() => handleLike(item._id)} className="icon-con">
+                                <FaHeart className="icons" />
                             </div>
-                        )
+                            <img width="300px" height="200px" src={API_URL + '/' + item.pimage} />
 
-                    })}
+                            <p className="m-2"> {item.pname}  | {item.category} </p>
+                            <h3 className="m-2 text-danger"> {item.price} </h3>
+                            <p className="m-2 text-success"> {item.pdesc} </p>
+                        </div>
+                    ))}
             </div>}
 
-            {!issearch && <div className="d-flex justify-content-center flex-wrap">
+            {!isSearch && <div className="d-flex justify-content-center flex-wrap">
                 {products && products.length > 0 &&
-                    products.map((item, index) => {
-
-                        return (
-                            <div onClick={() => handleProduct(item._id)} key={item._id} className="card m-3">
-                                <div onClick={() => handleLike(item._ijd)} className="icon-con">
-                                    <FaHeart className="icons" />
-                                </div>
-                                <img width="250px" height="150px" src={API_URL + '/' + item.pimage} />
-                                <h3 className="m-2 price-text"> Rs. {item.price} /- </h3>
-                                <p className="m-2"> {item.pname}  | {item.category} </p>
-                                <p className="m-2 text-success"> {item.pdesc} </p>
+                    sortProductsByPrice(products).map((item, index) => (
+                        <div onClick={() => handleProduct(item._id)} key={item._id} className="card m-3">
+                            <div onClick={() => handleLike(item._ijd)} className="icon-con">
+                                <FaHeart className="icons" />
                             </div>
-                        )
-
-                    })}
+                            <img width="250px" height="150px" src={API_URL + '/' + item.pimage} />
+                            <h3 className="m-2 price-text"> Rs. {item.price} /- </h3>
+                            <p className="m-2"> {item.pname}  | {item.category} </p>
+                            <p className="m-2 text-success"> {item.pdesc} </p>
+                        </div>
+                    ))}
             </div>}
-            
-
         </div>
-    )
+    );
 }
 
 export default CategoryPage;
